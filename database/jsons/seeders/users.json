@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Super Admin",
+    "email": "su@erajaya.dev",
+    "password": "admin123",
+    "team": "default",
+    "role": "superadmin"
+  },
+  {
+    "id": "2",
+    "name": "Admin",
+    "email": "admin@erajaya.dev",
+    "password": "admin123",
+    "team": "default",
+    "role": "admin"
+  },
+  {
+    "id": "3",
+    "name": "Supervisor",
+    "email": "spv@erajaya.dev",
+    "password": "admin123",
+    "team": "default",
+    "role": "supervisor"
+  },
+  {
+    "id": "4",
+    "name": "Staff",
+    "email": "staff@erajaya.dev",
+    "password": "admin123",
+    "team": "default",
+    "role": "staff"
+  }
+]
