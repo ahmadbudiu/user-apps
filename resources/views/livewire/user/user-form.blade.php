@@ -41,7 +41,7 @@
 
 
                <div class="flex items-center justify-start mt-4">
-                    <x-jet-button class="bg-blue-500 hover:bg-blue-700" type="submit">
+                    <x-jet-button class="bg-green-700 hover:bg-green-500" type="submit">
                          {{ __('Save') }}
                     </x-jet-button>
                     <a href="{{ route('user.index') }}">

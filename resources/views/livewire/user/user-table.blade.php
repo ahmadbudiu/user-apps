@@ -5,17 +5,17 @@
           </div>
           <div>
                <a href="{{ route('user.create') }}">
-                    <x-jet-button class="bg-blue-500 hover:bg-blue-700">
+                    <x-jet-button class="bg-green-700 hover:bg-green-500">
                          Add New
                     </x-jet-button>
                </a>
           </div>
      </div>
 
-     <div>
+     <div class="overflow-x-auto">
           <table class="styled-table">
                <thead>
-               <tr>
+               <tr class="bg-green-700">
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
