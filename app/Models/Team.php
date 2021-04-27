@@ -41,4 +41,8 @@ class Team extends JetstreamTeam
         'updated' => TeamUpdated::class,
         'deleted' => TeamDeleted::class,
     ];
+
+    public static function defaultTeam() {
+        return self::where('name', 'default')->first();
+    }
 }

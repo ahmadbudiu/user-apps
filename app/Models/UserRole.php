@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class UserRole extends Model
 {
@@ -11,7 +10,7 @@ class UserRole extends Model
 
     protected $fillable = ['name'];
 
-    public function permissions(): BelongsToMany
+    public function permissions()
     {
         return $this->belongsToMany(UserPermission::class, 'role_has_permissions', 'role_id', 'permission_id');
     }

@@ -57,5 +57,13 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'role',
     ];
+
+    const DEFAULT_PASSWORD = 'admin123';
+
+    public function getRoleAttribute()
+    {
+        return $this->teamRole(Team::defaultTeam())->name;
+    }
 }
