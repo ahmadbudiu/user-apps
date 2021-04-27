@@ -16,11 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                @can('read', \App\Models\User::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
                         {{ __('User') }}
                     </x-jet-nav-link>
                 </div>
+                @endcan
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -142,9 +144,11 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+            @can('read', \App\Models\User::class)
             <x-jet-responsive-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
                 {{ __('User') }}
             </x-jet-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->

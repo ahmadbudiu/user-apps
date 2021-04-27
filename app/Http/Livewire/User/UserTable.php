@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use App\Models\Team;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -24,6 +25,7 @@ class UserTable extends Component
 
     public function delete($userId)
     {
+        Gate::authorize('delete', User::class);
         $user = User::find($userId);
         if (! empty($user)) {
             $user->delete();

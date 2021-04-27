@@ -24,10 +24,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     })->name('dashboard');
 
     Route::group(['prefix' => 'user'], function () {
-       Route::get('/', [UserController::class, 'index'])->name('user.index');
-       Route::get('/create', [UserController::class, 'create'])->name('user.create');
-       Route::post('/', [UserController::class, 'store'])->name('user.store');
-       Route::get('/{userId}', [UserController::class, 'edit'])->name('user.edit');
-       Route::patch('/{userId}', [UserController::class, 'update'])->name('user.update');
+       Route::get('/', [UserController::class, 'index'])->name('user.index')->middleware('can:read,App\Models\User');
+       Route::get('/create', [UserController::class, 'create'])->name('user.create')->middleware('can:create,App\Models\User');
+       Route::post('/', [UserController::class, 'store'])->name('user.store')->middleware('can:create,App\Models\User');
+       Route::get('/{userId}/edit', [UserController::class, 'edit'])->name('user.edit')->middleware('can:update,App\Models\User');
+       Route::patch('/{userId}', [UserController::class, 'update'])->name('user.update')->middleware('can:update,App\Models\User');
     });
 });
